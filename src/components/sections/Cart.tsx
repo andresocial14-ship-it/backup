@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 import { Minus, Plus, Trash2, ArrowLeft, Lock, ShieldCheck, Truck, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import nasiGoreng from "@/assets/nasi-goreng.jpg";
-import nasiRawon from "@/assets/nasi-rawon.jpg";
-import nasiPadang from "@/assets/nasi-padang.jpg";
+import ayamCrispy from "@/assets/ayam-crispy.jpg";
+import kunirAsem from "@/assets/kunir-asem.jpg";
+import nasiAyamTempeSambal from "@/assets/nasi-ayam-tempe-sambal.jpg";
+import nasiGeprek from "@/assets/nasi-geprek.jpg";
 
 type Item = { id: number; name: string; desc: string; price: number; img: string; qty: number };
 
 const initial: Item[] = [
-  { id: 1, name: "Nasi Goreng Spesial", desc: "Rice with fried rice", price: 20000, img: nasiGoreng, qty: 0 },
-  { id: 2, name: "Nasi Goreng", desc: "Rice with fried rice", price: 18000, img: nasiGoreng, qty: 0 },
-  { id: 3, name: "Nasi Rawon", desc: "Beef black soup with rice", price: 22000, img: nasiRawon, qty: 0 },
-  { id: 4, name: "Nasi Padang", desc: "Rendang with rice & vegetables", price: 25000, img: nasiPadang, qty: 0 },
+  { id: 1, name: "Nasi Ayam Geprek", desc: "Ayam goreng krispy...", price: 12000, img: nasiGeprek, qty: 0 },
+  { id: 2, name: "Nasi Lalapan Ayam + Tempe + Sambal", desc: "Paket lengkap...", price: 15000, img: nasiAyamTempeSambal, qty: 0 },
+  { id: 3, name: "Kunir Asam", desc: "Minuman tradisional...", price: 6000, img: kunirAsem, qty: 0 },
+  { id: 4, name: "Ayam Krispy", desc: "Potongan ayam goreng...", price: 10000, img: ayamCrispy, qty: 0 },
 ];
 
 const Cart = () => {

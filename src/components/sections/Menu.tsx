@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { UtensilsCrossed, CupSoda, Plus } from "lucide-react";
-import nasiGoreng from "@/assets/nasi-goreng.jpg";
-import nasiRawon from "@/assets/nasi-rawon.jpg";
-import nasiPadang from "@/assets/nasi-padang.jpg";
-import esTeh from "@/assets/es-teh.jpg";
-import esJeruk from "@/assets/es-jeruk.jpg";
+import ayamCrispy from "@/assets/ayam-crispy.jpg";
+import kunirAsem from "@/assets/kunir-asem.jpg";
+import nasiAyamTempeSambal from "@/assets/nasi-ayam-tempe-sambal.jpg";
+import nasiGeprek from "@/assets/nasi-geprek.jpg";
+import saladBuah from "@/assets/salad-buah.jpg";
 
 type Category = "all" | "makanan" | "minuman";
 
 const items = [
-  { id: 1, name: "Nasi Ayam Geprek", desc: "Ayam goreng krispy yang digeprek dengan sambal bawang pedas khas, disajikan dengan nasi hangat dan lalapan segar.", price: 12000, img: nasiGoreng, cat: "makanan" as const },
-  { id: 2, name: "Nasi Lalapan Ayam + Tempe + Sambal", desc: "Paket lengkap ayam goreng bumbu kuning, tempe goreng, nasi, dan sambal terasi matang yang menggoda selera.", price: 15000, img: nasiPadang, cat: "makanan" as const },
-  { id: 3, name: "Kunir Asam", desc: "Minuman tradisional sehat dan menyegarkan yang dibuat dari kunyit pilihan dan asam jawa murni.", price: 6000, img: esTeh, cat: "minuman" as const },
-  { id: 4, name: "Ayam Krispy", desc: "Potongan ayam goreng dengan tepung bumbu rahasia yang super renyah di luar dan juicy di dalam.", price: 10000, img: nasiRawon, cat: "makanan" as const },
-  { id: 5, name: "Salad Buah", desc: "Potongan buah-buahan segar musim ini yang disiram saus mayo manis dan taburan keju melimpah.", price: 15000, img: esJeruk, cat: "makanan" as const },
+  { id: 1, name: "Nasi Ayam Geprek", desc: "Ayam goreng krispy yang digeprek dengan sambal bawang pedas khas, disajikan dengan nasi hangat dan lalapan segar.", price: 12000, img: nasiGeprek, cat: "makanan" as const },
+  { id: 2, name: "Nasi Lalapan Ayam + Tempe + Sambal", desc: "Paket lengkap ayam goreng bumbu kuning, tempe goreng, nasi, dan sambal terasi matang yang menggoda selera.", price: 15000, img: nasiAyamTempeSambal, cat: "makanan" as const },
+  { id: 3, name: "Kunir Asam", desc: "Minuman tradisional sehat dan menyegarkan yang dibuat dari kunyit pilihan dan asam jawa murni.", price: 6000, img: kunirAsem, cat: "minuman" as const },
+  { id: 4, name: "Ayam Krispy", desc: "Potongan ayam goreng dengan tepung bumbu rahasia yang super renyah di luar dan juicy di dalam.", price: 10000, img: ayamCrispy, cat: "makanan" as const },
+  { id: 5, name: "Salad Buah", desc: "Potongan buah-buahan segar musim ini yang disiram saus mayo manis dan taburan keju melimpah.", price: 15000, img: saladBuah, cat: "makanan" as const },
 ];
 
 const Menu = () => {
