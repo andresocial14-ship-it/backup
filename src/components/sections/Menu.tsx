@@ -10,12 +10,11 @@ import esJeruk from "@/assets/es-jeruk.jpg";
 type Category = "all" | "makanan" | "minuman";
 
 const items = [
-  { id: 1, name: "Nasi Goreng Spesial", desc: "Nasi goreng dengan bumbu rahasia, telur, ayam, dan sayuran segar.", price: 20000, img: nasiGoreng, cat: "makanan" as const },
-  { id: 2, name: "Nasi Goreng", desc: "Nasi goreng klasik dengan kerupuk dan acar.", price: 18000, img: nasiGoreng, cat: "makanan" as const },
-  { id: 3, name: "Nasi Rawon", desc: "Sup daging hitam khas Jawa Timur dengan kuah kluwek.", price: 22000, img: nasiRawon, cat: "makanan" as const },
-  { id: 4, name: "Nasi Padang", desc: "Rendang empuk, sayur nangka, dan sambal hijau.", price: 25000, img: nasiPadang, cat: "makanan" as const },
-  { id: 5, name: "Es Teh Manis", desc: "Teh tradisional segar dengan es batu pilihan.", price: 5000, img: esTeh, cat: "minuman" as const },
-  { id: 6, name: "Es Jeruk Peras", desc: "Jeruk peras asli, segar dan menyegarkan.", price: 8000, img: esJeruk, cat: "minuman" as const },
+  { id: 1, name: "Nasi Ayam Geprek", desc: "Ayam goreng krispy yang digeprek dengan sambal bawang pedas khas, disajikan dengan nasi hangat dan lalapan segar.", price: 12000, img: nasiGoreng, cat: "makanan" as const },
+  { id: 2, name: "Nasi Lalapan Ayam + Tempe + Sambal", desc: "Paket lengkap ayam goreng bumbu kuning, tempe goreng, nasi, dan sambal terasi matang yang menggoda selera.", price: 15000, img: nasiPadang, cat: "makanan" as const },
+  { id: 3, name: "Kunir Asam", desc: "Minuman tradisional sehat dan menyegarkan yang dibuat dari kunyit pilihan dan asam jawa murni.", price: 6000, img: esTeh, cat: "minuman" as const },
+  { id: 4, name: "Ayam Krispy", desc: "Potongan ayam goreng dengan tepung bumbu rahasia yang super renyah di luar dan juicy di dalam.", price: 10000, img: nasiRawon, cat: "makanan" as const },
+  { id: 5, name: "Salad Buah", desc: "Potongan buah-buahan segar musim ini yang disiram saus mayo manis dan taburan keju melimpah.", price: 15000, img: esJeruk, cat: "makanan" as const },
 ];
 
 const Menu = () => {
