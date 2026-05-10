@@ -21,14 +21,16 @@ const About = () => {
           </div>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              TakeWay Resto adalah UMKM kuliner yang berkomitmen menyediakan makanan harian
-              berkualitas dan minuman tradisional untuk masyarakat Malang dan sekitarnya. Kami melayani
-              kebutuhan sehari-hari maupun pesanan khusus melalui sistem pemesanan langsung dan online.
+              Takeway Resto merupakan bisnis kuliner online asal Malang yang melayani pemesanan makanan untuk kebutuhan harian, acara keluarga, kegiatan komunitas, hingga event dalam jumlah besar dengan layanan antar langsung ke lokasi pelanggan. 
+              Nama “Takeway” sendiri terinspirasi dari istilah take away yang dipelesetkan agar terasa lebih unik, modern, dan mudah diingat.
             </p>
             <p>
-              Dalam setiap proses produksi, kami selalu menjaga kualitas bahan dan cita rasa yang autentik.
-              Ketika menerima pesanan dalam jumlah besar, kami juga melibatkan masyarakat sekitar, turut
-              berkontribusi dalam membuka peluang kerja bagi lingkungan.
+              Usaha ini dibangun oleh sekelompok sahabat SMA yang memiliki semangat untuk berkembang bersama melalui dunia kuliner. 
+              Di tengah masa pandemi COVID-19, Takeway Resto tetap bertahan dengan mengandalkan sistem pemesanan online dan layanan delivery yang praktis.
+            </p>
+            <p>
+              Selain menjaga kualitas rasa dan pelayanan, Takeway Resto juga aktif melibatkan masyarakat sekitar serta mendukung kolaborasi bersama UMKM lokal. 
+              Bagi Takeway Resto, makanan bukan hanya soal rasa, tetapi juga tentang kebersamaan, peluang, dan perjalanan untuk tumbuh bersama dari waktu ke waktu.
             </p>
           </div>
         </div>
