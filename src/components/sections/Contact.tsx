@@ -20,7 +20,16 @@ const Contact = () => {
               <h3 className="text-2xl font-bold">Lokasi Kami</h3>
               <p className="text-sm text-white/60">Kunjungi kami di alamat berikut</p>
             </div>
-            <Button variant="soft" className="rounded-full"><Compass className="h-4 w-4" /> Navigasi</Button>
+            <Button asChild variant="soft" className="rounded-full">
+              <a
+                href="https://maps.app.goo.gl/yn8akMhPFsX32RZ68?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Compass className="h-4 w-4" />
+                Navigasi
+              </a>
+            </Button>
           </div>
           <div className="mt-6 space-y-1 text-white/85 text-sm leading-relaxed">
             <p>Indah E5, Jl. Perum Asrikaton</p>
