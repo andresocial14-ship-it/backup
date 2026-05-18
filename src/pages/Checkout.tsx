@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import type { ReactNode } from "react";
 import { MapPin, Map as MapIcon, Info, ArrowLeft, Check, Building2, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,16 +11,15 @@ import Navbar from "@/components/Navbar";
 type Pay = "transfer" | "qris";
 type DeliveryType = "delivery" | "pickup";
 
-const methods: { id: Pay; title: string; desc: string; icon: React.ReactNode }[] = [
+const methods: { id: Pay; title: string; desc: string; icon: ReactNode }[] = [
   { id: "transfer", title: "Transfer Bank", desc: "BCA, Mandiri, BNI, BRI", icon: <Building2 className="h-5 w-5" /> },
   { id: "qris", title: "QRIS", desc: "Scan & bayar dengan e-wallet apa pun", icon: <QrCode className="h-5 w-5" /> },
 ];
 
-const [deliveryType, setDeliveryType] =
-  useState<DeliveryType>("delivery");
-
 const Checkout = () => {
   const [pay, setPay] = useState<Pay>("transfer");
+  const [deliveryType, setDeliveryType] =
+  useState<DeliveryType>("delivery");
   const subtotal = 65000;
   const fee = 0;
   const total = subtotal + fee;
