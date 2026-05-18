@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { MapPin, Map as MapIcon, Info, ArrowLeft, Check, Building2, QrCode, Banknote } from "lucide-react";
+import { MapPin, Map as MapIcon, Info, ArrowLeft, Check, Building2, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 
-type Pay = "transfer" | "qris" | "cod";
+type Pay = "transfer" | "qris";
+type DeliveryType = "delivery" | "pickup";
 
 const methods: { id: Pay; title: string; desc: string; icon: React.ReactNode }[] = [
   { id: "transfer", title: "Transfer Bank", desc: "BCA, Mandiri, BNI, BRI", icon: <Building2 className="h-5 w-5" /> },
   { id: "qris", title: "QRIS", desc: "Scan & bayar dengan e-wallet apa pun", icon: <QrCode className="h-5 w-5" /> },
-  { id: "cod", title: "Cash On Delivery (COD)", desc: "Bayar tunai saat pesanan tiba", icon: <Banknote className="h-5 w-5" /> },
 ];
+
+const [deliveryType, setDeliveryType] =
+  useState<DeliveryType>("delivery");
 
 const Checkout = () => {
   const [pay, setPay] = useState<Pay>("transfer");
@@ -31,17 +34,67 @@ const Checkout = () => {
           </Link>
           <h1 className="mt-4 text-4xl md:text-5xl font-extrabold text-foreground">Checkout</h1>
           <p className="mt-1 text-muted-foreground">Lengkapi informasi pengiriman dan pilih metode pembayaran.</p>
+          <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-xl">
+            <button
+              type="button"
+              onClick={() => setDeliveryType("delivery")}
+              className={`rounded-2xl border-2 p-5 text-left transition-all ${
+                deliveryType === "delivery"
+                  ? "border-primary bg-primary/10"
+                  : "border-border bg-card"
+              }`}
+            >
+              <p className="font-bold">Diantar ke Tempat</p>
 
+              <p className="text-sm text-muted-foreground mt-1">
+                Pesanan akan dikirim ke alamat Anda
+              </p>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setDeliveryType("pickup")}
+              className={`rounded-2xl border-2 p-5 text-left transition-all ${
+                deliveryType === "pickup"
+                  ? "border-primary bg-primary/10"
+                  : "border-border bg-card"
+              }`}
+            >
+              <p className="font-bold">Ambil Langsung</p>
+
+              <p className="text-sm text-muted-foreground mt-1">
+                Ambil pesanan langsung di resto
+              </p>
+            </button>
+          </div>
           <div className="mt-10 grid lg:grid-cols-2 gap-6">
             <div className="soft-card p-7 space-y-6">
               <h3 className="font-bold text-lg">Informasi Pengiriman</h3>
               <div className="grid gap-4">
                 <div><Label>Nama Pemesan</Label><Input placeholder="Enter your full name" className="mt-1.5 rounded-2xl h-11" /></div>
                 <div><Label>Nomor Telepon</Label><Input placeholder="08..." className="mt-1.5 rounded-2xl h-11" /></div>
-                <div><Label>Alamat Lengkap</Label><Input placeholder="Jl. ..." className="mt-1.5 rounded-2xl h-11" /></div>
-                <div><Label>Catatan Tambahan</Label><Textarea placeholder="Patokan, lantai, dll." className="mt-1.5 rounded-2xl min-h-24" /></div>
+                {deliveryType === "delivery" && (
+                <>
+                  <div>
+                    <Label>Alamat Lengkap</Label>
+
+                    <Input
+                      placeholder="Jl. ..."
+                      className="mt-1.5 rounded-2xl h-11"
+                    />
+                  </div>
+
+                  <div>
+                    <Label>Catatan Tambahan</Label>
+
+                    <Textarea
+                      placeholder="Patokan, lantai, dll."
+                      className="mt-1.5 rounded-2xl min-h-24"
+                    />
+                  </div>
+                </>
+              )}
               </div>
-              <Button variant="soft" className="rounded-2xl h-11 w-full sm:w-auto"><MapPin className="h-4 w-4" /> Use My Location</Button>
             </div>
 
             <div className="soft-card p-7">
